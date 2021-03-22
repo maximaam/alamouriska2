@@ -39,3 +39,9 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Service\NavBuilder:
+        arguments: [ "@knp_menu.factory", "@doctrine.orm.entity_manager" ]
+        tags:
+            - { name: knp_menu.menu_builder, method: mainMenu, alias: main }
+            - { name: knp_menu.menu_builder, method: footerMenu, alias: footer }

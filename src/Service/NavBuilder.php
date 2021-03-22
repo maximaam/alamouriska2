@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Service;
 
+use App\Utils\ModelUtils;
 use Knp\Menu\FactoryInterface;
 use Doctrine\ORM\EntityManager;
 use Knp\Menu\ItemInterface;
@@ -52,16 +53,17 @@ class NavBuilder
      * @param array $options
      * @return ItemInterface
      */
-    public function createMainMenu(array $options): ItemInterface
+    public function mainMenu(array $options): ItemInterface
     {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'navbar-nav mr-auto');
 
+
         foreach (ModelUtils::ENTITY_DOMAIN as $domain => $entity) {
             $menu->addChild(ucfirst(strstr($domain, '-', true)), [
-                'route'     => 'post_index',
-                'routeParameters'   => [
-                    'domain'    => $domain //SEO route
+                'route' => 'post_index',
+                'routeParameters' => [
+                    'domain' => $domain //SEO route
                 ],
                 /*
                 'extras'    => [
@@ -114,7 +116,7 @@ class NavBuilder
      * @param array $options
      * @return ItemInterface
      */
-    public function createFooterMenu(array $options): ItemInterface
+    public function footerMenu(array $options): ItemInterface
     {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'footer-nav list-unstyled text-right');

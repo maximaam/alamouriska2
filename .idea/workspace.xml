@@ -2,38 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cf81d0d-9e8e-43d1-8818-912ae3292680" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/alamouriska2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/alamouriska-logo-512.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/alamouriska-logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/default-avatar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/logo-alamouriska.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/fb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/NavBuilder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/action_by.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/avatar.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/btn-login.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/comment-item.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/comment-login-teaser.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/fb-login.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/fb-logout.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/liking.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/modal.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/post_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/post_image.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/post_list.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/search.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/alamouriska-bg-mobile.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/alamouriska-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Utils/ModelUtils.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/alamouriska2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/alamouriska2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.php-version" beforeDir="false" afterPath="$PROJECT_DIR$/.php-version" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/IndexController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/NavBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/NavBuilder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
@@ -42,7 +26,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -57,6 +41,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/composer.json" root0="SKIP_INSPECTION" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -165,6 +152,8 @@
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-menu-bundle" />
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/symfonycasts/verify-email-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/google-mailer" />
     </include_path>
   </component>
   <component name="ProjectId" id="1o3V5nOKQvYeVbHYtf9q5SQGq7w" />
@@ -176,17 +165,18 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/public/js" />
       <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -198,7 +188,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1612515153063</updated>
-      <workItem from="1612515155071" duration="6775000" />
+      <workItem from="1612515155071" duration="6786000" />
+      <workItem from="1612778966267" duration="1205000" />
+      <workItem from="1616405160087" duration="16959000" />
+      <workItem from="1616426634751" duration="1062000" />
     </task>
     <servers />
   </component>

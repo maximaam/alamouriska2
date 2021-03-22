@@ -1,0 +1,20 @@
+
+body {
+    background: #999999 url(../images/alamouriska-bg-mobile.jpg) no-repeat fixed;
+    background-size: cover;
+    background-position-y: 60px;
+}
+
+.navbar {
+    height: 60px;
+    background: #BCEAE2;
+}
+
+
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+    body {
+        background: #999999 url(../images/alamouriska-bg.jpg) no-repeat fixed;
+        background-size: cover;
+        background-position-y: 60px;
+    }
+}
