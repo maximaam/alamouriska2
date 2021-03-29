@@ -5,7 +5,8 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: 'fr'
-    app_name: 'ALAMOURISKA'
+    app_name: 'Alamouriska'
+    app_host: 'alamouriska.com'
     app_secret: '%env(APP_SECRET)%'
     app_notifier_email: 'app@alamouriska.com'
     app_receiver_email: 'alamouriska.app@gmail.com'

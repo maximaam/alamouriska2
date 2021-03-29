@@ -20,11 +20,11 @@
 
                 <form method="post">
                     <div class="mb-3">
-                        <label class="visually-hidden" for="input-username">{{ 'label.user'|trans }}</label>
+                        <label for="input-username">{{ 'label.user'|trans }}</label>
                         <input type="text" value="{{ last_username }}" name="username" placeholder="{{ 'label.user'|trans }}" id="input-username" class="form-control" required autofocus>
                     </div>
                     <div class="mb-3">
-                        <label class="visually-hidden" for="input-password">{{ 'label.password'|trans }}</label>
+                        <label for="input-password">{{ 'label.password'|trans }}</label>
                         <input type="password" name="password" placeholder="{{ 'label.password'|trans }}" id="input-password" class="form-control" required>
                         <div id="emailHelp" class="form-text">
                             <a href="{{ path('app_forgot_password_request') }}">{{ 'msg.forgot_password'|trans }}</a>

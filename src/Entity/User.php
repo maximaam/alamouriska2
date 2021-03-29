@@ -7,11 +7,12 @@ use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
- * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
+ * @UniqueEntity(fields={"username"}, message="username_exists")
+ * @UniqueEntity(fields={"email"}, message="email_exists")
  */
 class User implements UserInterface
 {
@@ -27,11 +28,13 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=128, unique=true)
+     * @Assert\Email()
      */
     private ?string $email;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\Type(type="alnum")
      */
     private string $username;
 

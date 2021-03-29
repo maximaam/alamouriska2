@@ -74,7 +74,7 @@ class ResetPasswordController extends AbstractController
         }
 
         return $this->render('reset_password/request.html.twig', [
-            'requestForm' => $form->createView(),
+            'form' => $form->createView(),
         ]);
     }
 
@@ -121,10 +121,7 @@ class ResetPasswordController extends AbstractController
             /** @var UserInterface $user */
             $user = $this->resetPasswordHelper->validateTokenAndFetchUser($token);
         } catch (ResetPasswordExceptionInterface $e) {
-            $this->addFlash('reset_password_error', sprintf(
-                'There was a problem validating your reset request - %s',
-                $e->getReason()
-            ));
+            $this->addFlash('reset_password_error', $this->translator->trans('flash.reset_password_invalid_link'));
 
             return $this->redirectToRoute('app_forgot_password_request');
         }
@@ -153,7 +150,7 @@ class ResetPasswordController extends AbstractController
         }
 
         return $this->render('reset_password/reset.html.twig', [
-            'resetForm' => $form->createView(),
+            'form' => $form->createView(),
         ]);
     }
 

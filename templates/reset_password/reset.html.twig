@@ -1,15 +1,24 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    {{ 'label.reset_password'|trans }}
+    {{ 'label.change_password'|trans }}
     {{ parent() }}
 {% endblock %}
 
 {% block body %}
-    <h1>Reset your password</h1>
-
-    {{ form_start(resetForm) }}
-        {{ form_row(resetForm.plainPassword) }}
-        <button class="btn btn-primary">Reset password</button>
-    {{ form_end(resetForm) }}
+    <div class="col">
+        <div class="card w-50 mx-auto shadow-sm">
+            <div class="card-header">
+                <h1 class="text-center">{{ 'label.change_password'|trans }}</h1>
+            </div>
+            <div class="card-body">
+                {{ form_start(form) }}
+                {{ form_row(form.plainPassword) }}
+                <div class="text-end">
+                    <button class="btn btn-primary" type="submit">{{ 'send'|trans }}</button>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
