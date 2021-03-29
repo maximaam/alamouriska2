@@ -1,3 +1,4 @@
+welcome: Bienvenue
 label:
   user: Utilisateur
   username: "Nom d'utilisateur"
@@ -9,3 +10,11 @@ label:
 
 msg:
   forgot_password: Mot de passe oublié?
+
+flash:
+  registration_pre_confirmation: "Sahit ! Un email de confirmation a été envoyé. Ne pas oublier de confirmer en cliquant sur le lien inclus."
+  registration_confirmation: "Ton inscription est confirmée !"
+
+email:
+  registration_subject: "Inscription sur Alamouriska.com | confirmation"
+  reset_password_request: "Alamouriska - Réinitialiser le mot de passe"

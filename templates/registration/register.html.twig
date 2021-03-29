@@ -2,6 +2,7 @@
 
 {% block title %}
     {{ 'label.register'|trans }}
+    {{ parent() }}
 {% endblock %}
 
 {% block body %}
@@ -18,15 +19,15 @@
                 {% endfor %}
 
                 {{ form_start(form) }}
-                    <div class="mb-3">
+                    <div class="form-group">
                         {{ form_label(form.email, 'label.email_address'|trans) }}
                         {{ form_widget(form.email, {'attr': {'placeholder': 'label.email_address'|trans}}) }}
                     </div>
-                    <div class="mb-3">
+                    <div class="form-group">
                         {{ form_label(form.username, 'label.username'|trans) }}
                         {{ form_widget(form.username, {'attr': {'placeholder': 'label.username'|trans}}) }}
                     </div>
-                    <div class="mb-3">
+                    <div class="form-group">
                         {{ form_label(form.plainPassword, 'label.password'|trans) }}
                         {{ form_widget(form.plainPassword, {'attr': {'placeholder': 'label.password'|trans}}) }}
                     </div>

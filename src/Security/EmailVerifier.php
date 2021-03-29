@@ -51,6 +51,7 @@ final class EmailVerifier
 
         $context = $email->getContext();
         $context['signedUrl'] = $signatureComponents->getSignedUrl();
+        $context['username'] = $user->getUsername();
         $context['expiresAtMessageKey'] = $signatureComponents->getExpirationMessageKey();
         $context['expiresAtMessageData'] = $signatureComponents->getExpirationMessageData();
 
@@ -66,7 +67,7 @@ final class EmailVerifier
      */
     public function handleEmailConfirmation(Request $request, UserInterface $user): void
     {
-        $this->verifyEmailHelper->validateEmailConfirmation($request->getUri(), $user->getId(), $user->getEmail());
+        $this->verifyEmailHelper->validateEmailConfirmation($request->getUri(), (string) $user->getId(), $user->getEmail());
 
         $user->setIsVerified(true);
 

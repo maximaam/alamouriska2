@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Reset your password{% endblock %}
+{% block title %}
+    {{ 'label.reset_password'|trans }}
+    {{ parent() }}
+{% endblock %}
 
 {% block body %}
     <h1>Reset your password</h1>

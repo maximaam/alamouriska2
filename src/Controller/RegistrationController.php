@@ -8,13 +8,16 @@ use App\Form\RegistrationFormType;
 use App\Security\EmailVerifier;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
+use function sprintf;
 
 /**
  * Class RegistrationController
@@ -23,23 +26,29 @@ use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
 class RegistrationController extends AbstractController
 {
     private EmailVerifier $emailVerifier;
+    private ParameterBagInterface $parameterBag;
+    private TranslatorInterface $translator;
 
     /**
      * RegistrationController constructor.
      * @param EmailVerifier $emailVerifier
+     * @param ParameterBagInterface $parameterBag
+     * @param TranslatorInterface $translator
      */
-    public function __construct(EmailVerifier $emailVerifier)
+    public function __construct(EmailVerifier $emailVerifier, ParameterBagInterface $parameterBag, TranslatorInterface $translator)
     {
         $this->emailVerifier = $emailVerifier;
+        $this->parameterBag = $parameterBag;
+        $this->translator = $translator;
     }
 
-    #[Route('/register', name: 'app_register')]
     /**
      * @param Request $request
      * @param UserPasswordEncoderInterface $passwordEncoder
      * @return Response
      * @throws TransportExceptionInterface
      */
+    #[Route('/register', name: 'app_register')]
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
     {
         if ($this->getUser()) {
@@ -59,14 +68,15 @@ class RegistrationController extends AbstractController
             $entityManager->flush();
 
             // generate a signed url and email it to the user
-            $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
-                (new TemplatedEmail())
-                    ->from(new Address('app@alamouriska.com', 'Alamouriska says'))
+            $this->emailVerifier
+                ->sendEmailConfirmation('app_verify_email', $user, (new TemplatedEmail())
+                    ->from(new Address($this->parameterBag->get('mailer_from'), $this->parameterBag->get('app_name')))
                     ->to($user->getEmail())
-                    ->subject('Please Confirm your Email')
-                    ->htmlTemplate('registration/confirmation_email.html.twig')
-            );
-            // do anything else you need here, like send an email
+                    ->subject($this->translator->trans('email.registration_subject'))
+                    ->htmlTemplate(sprintf('registration/confirmation_email_%s.html.twig', $request->getLocale()))
+                );
+
+            $this->addFlash('success', $this->translator->trans('flash.registration_pre_confirmation'));
 
             return $this->redirectToRoute('app_index');
         }
@@ -76,11 +86,11 @@ class RegistrationController extends AbstractController
         ]);
     }
 
-    #[Route('/verify/email', name: 'app_verify_email')]
     /**
      * @param Request $request
      * @return Response
      */
+    #[Route('/verify/email', name: 'app_verify_email')]
     public function verifyUserEmail(Request $request): Response
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
@@ -95,7 +105,7 @@ class RegistrationController extends AbstractController
         }
 
         // @TODO Change the redirect on success and handle or remove the flash message in your templates
-        $this->addFlash('success', 'Your email address has been verified.');
+        $this->addFlash('success', $this->translator->trans('flash.registration_confirmation'));
 
         return $this->redirectToRoute('app_index');
     }
