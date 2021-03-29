@@ -1,0 +1,11 @@
+label:
+  user: Utilisateur
+  username: "Nom d'utilisateur"
+  password: "Mot de passe"
+  login: Connexion
+  register: Inscription
+  email_address: "Adresse Email"
+  reset_password: "Réinitialiser le mot de passe"
+
+msg:
+  forgot_password: Mot de passe oublié?

@@ -5,12 +5,19 @@ namespace App\Entity;
 
 use App\Repository\PostRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=PostRepository::class)
  */
 class Post
 {
+    const TYPE_WORD = 1;
+    const TYPE_EXPRESSION = 2;
+    const TYPE_PROVERB = 3;
+    const TYPE_JOKE = 4;
+    const TYPE_BLOG = 5;
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -19,6 +26,7 @@ class Post
     private ?int $id;
 
     /**
+     * @Assert\Choice(callback="getTypes")
      * @ORM\Column(type="smallint")
      */
     private ?int $type;
@@ -120,5 +128,12 @@ class Post
         $this->alias = $alias;
 
         return $this;
+    }
+
+    public static function getTypes(bool $keysOnly = true): array
+    {
+        $types = [
+            self::TYPE_WORD => ''
+        ];
     }
 }

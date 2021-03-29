@@ -1,20 +1,82 @@
 
+
 body {
     background: #999999 url(../images/alamouriska-bg-mobile.jpg) no-repeat fixed;
     background-size: cover;
     background-position-y: 60px;
+    color: #666666;
 }
 
 .navbar {
     height: 60px;
-    background: #BCEAE2;
+    background: transparent;
+}
+
+.navbar2::after {
+    --border-width: 3px;
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(
+            60deg,
+            hsl(224, 85%, 66%),
+            hsl(269, 85%, 66%),
+            hsl(314, 85%, 66%),
+            hsl(359, 85%, 66%),
+            hsl(44, 85%, 66%),
+            hsl(89, 85%, 66%),
+            hsl(134, 85%, 66%),
+            hsl(179, 85%, 66%)
+    );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 20s alternate infinite;
+}
+
+@keyframes moveGradient {
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+main {
+    margin-top: 80px;
+}
+
+
+.card-opacity {
+    background-color: rgba(255,255,255,0.2) !important;
+}
+
+
+.btn-primary {
+    background-color: #F84612;
+    border: #F84612;
+}
+
+.btn-secondary {
+    background-color: #2DDCC9;
+    border: #2DDCC9;
+}
+
+.btn-secondary:hover {
+    background-color: #C4ECE5;
+}
+
+.btn-primary:hover {
+    background-color: #FA7148;
 }
 
 
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
     body {
-        background: #999999 url(../images/alamouriska-bg.jpg) no-repeat fixed;
+        background: #999999 url(../images/bg-alamouriska.jpg) no-repeat fixed;
         background-size: cover;
-        background-position-y: 60px;
+
     }
 }
