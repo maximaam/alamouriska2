@@ -1,24 +1,22 @@
-{% extends 'base.html.twig' %}
+{% extends 'user.html.twig' %}
 
 {% block title %}
     {{ 'label.change_password'|trans }}
     {{ parent() }}
 {% endblock %}
 
-{% block body %}
-    <div class="col">
-        <div class="card w-50 mx-auto shadow-sm">
-            <div class="card-header">
-                <h1 class="text-center">{{ 'label.change_password'|trans }}</h1>
-            </div>
-            <div class="card-body">
-                {{ form_start(form) }}
-                {{ form_row(form.plainPassword) }}
-                <div class="text-end">
-                    <button class="btn btn-primary" type="submit">{{ 'send'|trans }}</button>
-                    {{ form_end(form) }}
-                </div>
-            </div>
-        </div>
+{% block card_header %}
+    <h1 class="text-center">{{ 'label.change_password'|trans }}</h1>
+{% endblock %}
+
+{% block card_body %}
+    {{ form_start(form) }}
+    {{ form_row(form.plainPassword) }}
+    <div class="text-end">
+        <button class="btn btn-primary" type="submit">{{ 'send'|trans }}</button>
     </div>
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block card_footer %}
 {% endblock %}

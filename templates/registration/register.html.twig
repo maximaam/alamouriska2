@@ -5,41 +5,36 @@
     {{ parent() }}
 {% endblock %}
 
-{% block body %}
-    <div class="col">
-        <div class="card w-50 mx-auto shadow-sm">
-            <div class="card-header">
-                <h1 class="text-center">{{ 'label.register'|trans }}</h1>
-            </div>
-            <div class="card-body">
-                {% for flashError in app.flashes('verify_email_error') %}
-                    <div class="alert alert-danger" role="alert">
-                        {{ flashError }}
-                    </div>
-                {% endfor %}
+{% block card_header %}
+    <h1 class="text-center">{{ 'label.register'|trans }}</h1>
+{% endblock %}
 
-                {{ form_start(form) }}
-                    <div class="form-group">
-                        {{ form_label(form.email, 'label.email_address'|trans) }}
-                        {{ form_widget(form.email, {'attr': {'placeholder': 'label.email_address'|trans}}) }}
-                    </div>
-                    <div class="form-group">
-                        {{ form_label(form.username, 'label.username'|trans) }}
-                        {{ form_widget(form.username, {'attr': {'placeholder': 'label.username'|trans}}) }}
-                    </div>
-                    <div class="form-group">
-                        {{ form_label(form.plainPassword, 'label.password'|trans) }}
-                        {{ form_widget(form.plainPassword, {'attr': {'placeholder': 'label.password'|trans}}) }}
-                    </div>
-                    <div class="text-end">
-                        <button class="btn btn-lg btn-primary" type="submit">{{ 'label.register'|trans }}</button>
-                    </div>
-                {{ form_end(form) }}
-            </div>
-            <div class="card-footer">
-                Ou alors avec ton compte facebook
-            </div>
+{% block card_body %}
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">
+            {{ flashError }}
         </div>
-    </div>
+    {% endfor %}
 
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.email, 'label.email_address'|trans) }}
+        {{ form_widget(form.email, {'attr': {'placeholder': 'label.email_address'|trans}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.username, 'label.username'|trans) }}
+        {{ form_widget(form.username, {'attr': {'placeholder': 'label.username'|trans}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.plainPassword, 'label.password'|trans) }}
+        {{ form_widget(form.plainPassword, {'attr': {'placeholder': 'label.password'|trans}}) }}
+    </div>
+    <div class="text-end">
+        <button class="btn btn-lg btn-primary" type="submit">{{ 'label.register'|trans }}</button>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block card_footer %}
+    Ou alors avec ton compte facebook
 {% endblock %}

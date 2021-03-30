@@ -82,12 +82,15 @@
 
                     <div class="user-cont mr-2">
                         {% if is_granted("IS_AUTHENTICATED_FULLY") %}
-                            <a href="#" class="user btn" title="Paramètres">
-                                <i class="fa fa-cog"></i>
+                            <a href="{{ path('app_logout') }}" class="user btn" title="Paramètres">
+                                {{ 'label.logout'|trans }}
+                            </a>
+                            <a href="{{ path('app_profile_show') }}" class="user btn" title="Paramètres">
+                                {{ 'label.profile'|trans }}
                             </a>
                         {% else %}
                             <a href="{{ path('app_login') }}" title="Se connecter ou S'inscrire" class="user btn rounded">
-                                <i class="fa fa-user-circle"></i>
+                                {{ 'label.login'|trans }}
                             </a>
                         {% endif %}
                     </div>
