@@ -1,4 +1,5 @@
 username_exists: "Un utilisateur avec le même nom existe"
+email_required: "Une adresse Email est nécessaire"
 email_exists: "Un utilisateur avec la même adresse email existe"
 password_required: "Le mot de passe est obligatoire"
 password_min_length: "Le mot de passe doit avoir minimum {{ limit }} caractères"

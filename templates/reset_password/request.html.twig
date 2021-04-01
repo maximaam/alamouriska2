@@ -14,12 +14,7 @@
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
 
-    {{ form_start(form) }}
-    {{ form_row(form.email) }}
-    <div class="text-end">
-        <button class="btn btn-primary" type="submit">{{ 'send'|trans }}</button>
-    </div>
-    {{ form_end(form) }}
+    {{ form(form) }}
 {% endblock %}
 
 {% block card_footer %}
