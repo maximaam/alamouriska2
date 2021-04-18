@@ -168,6 +168,7 @@ class ResetPasswordController extends AbstractController
 
         // Do not reveal whether a user account was found or not.
         if (null === $user) {
+            $this->addFlash('reset_password_error', $this->translator->trans('flash.reset_password_invalid_user'));
             return $this->redirectToRoute('app_check_email');
         }
 

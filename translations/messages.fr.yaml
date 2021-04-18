@@ -24,6 +24,7 @@ flash:
   registration_pre_confirmation: "Sahit ! Un email de confirmation a été envoyé. Ne pas oublier de confirmer en cliquant sur le lien inclus."
   registration_confirmation: "Ton inscription est confirmée !"
   reset_password_invalid_link: "Le lien n'est plus valide. Essaie de nouveau."
+  reset_password_invalid_user: "Utilisateur introuvable."
   profile_edit_success: "Le profile a été actualisé"
 
 email:
