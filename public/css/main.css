@@ -1,66 +1,39 @@
 body {
-    background: #999999 url(../images/alamouriska-bg-mobile.jpg) no-repeat fixed;
-    background-size: cover;
-    background-position-y: 60px;
-    color: #666666;
+    color: #333333;
+    background-color: #EEEEEE;
 }
-
+header svg {
+    display: none;
+}
 .navbar {
-    height: 60px;
-    background: transparent;
+    background: #208fbc;
 }
-
-.navbar2::after {
-    --border-width: 3px;
-    position: absolute;
-    content: "";
-    top: calc(-1 * var(--border-width));
-    left: calc(-1 * var(--border-width));
-    z-index: -1;
-    width: calc(100% + var(--border-width) * 2);
-    height: calc(100% + var(--border-width) * 2);
-    background: linear-gradient(
-            60deg,
-            hsl(224, 85%, 66%),
-            hsl(269, 85%, 66%),
-            hsl(314, 85%, 66%),
-            hsl(359, 85%, 66%),
-            hsl(44, 85%, 66%),
-            hsl(89, 85%, 66%),
-            hsl(134, 85%, 66%),
-            hsl(179, 85%, 66%)
-    );
-    background-size: 300% 300%;
-    background-position: 0 50%;
-    border-radius: calc(2 * var(--border-width));
-    animation: moveGradient 20s alternate infinite;
-}
-
-@keyframes moveGradient {
-    50% {
-        background-position: 100% 50%;
-    }
+.navbar-brand {
+    font-weight: 700;
 }
 
 main {
-    margin-top: 80px;
+    margin-top: 20px;
+}
+.main-footer {
+    margin-top: 50px;
+    background-color: #155d7b;
 }
 .btn-primary {
-    background-color: #F84612;
-    border: #F84612;
+    background-color: #bc208f;
+    border: #bc208f;
 }
-
 .btn-secondary {
-    background-color: #2DDCC9;
-    border: #2DDCC9;
+    background-color: #8fbc20;
+    border: #8fbc20;
 }
 
 .btn-secondary:hover {
-    background-color: #C4ECE5;
+    background-color: #566D12;
 }
 
 .btn-primary:hover {
-    background-color: #FA7148;
+    background-color: #871869;
 }
 
 .form-group {
@@ -71,9 +44,22 @@ main {
 }
 
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
-    body {
-        background: #999999 url(../images/bg-alamouriska.jpg) no-repeat fixed;
-        background-size: cover;
-
+    header svg {
+        display: block;
+        position: absolute;
+        top: -30px;
+        left: 0;
+        z-index: -1;
+        fill: #208fbc;
+        fill-opacity: 1;
+    }
+    .navbar {
+        background: transparent;
+    }
+    main {
+        margin-top: 50px;
+    }
+    .navbar-brand span {
+        display: none;
     }
 }

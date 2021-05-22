@@ -40,10 +40,11 @@
     <script src="{{ asset('js/fb.js') }}"></script>
 
     <header class="main-header">
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img src="{{ asset('images/alamouriska-logo.jpg') }}" alt="{{ app_name }} Logo" title="{{ app_name }} - {{ 'slogan' | trans }}" class="rounded">
+                    <span>ALAMOURISKA</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -95,9 +96,13 @@
                 </div>
             </div>
         </nav>
-
-
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path d="M0,224L48,202.7C96,181,192,139,288,117.3C384,96,480,96,576,106.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+        </svg>
         <!--
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,128L48,128C96,128,192,128,288,117.3C384,107,480,85,576,74.7C672,64,768,64,864,90.7C960,117,1056,171,1152,181.3C1248,192,1344,160,1392,144L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+
+
         <nav class="navbar fixed-top navbar-expand-lg navbar-light text-dark">
             <div class="container">
 
@@ -145,6 +150,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 text-center">
+                    sdfsdfsdfs
                     {# {{ knp_menu_render('footer') }} #}
                 </div>
                 <div class="col-md-4">

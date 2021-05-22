@@ -19,6 +19,7 @@ label:
   password_constraints: Mot de passe entre 6 et 64 caractères
   profile_edit: Modifier le profil
   profile: Profil
+  logout: Déconnexion
 
 flash:
   registration_pre_confirmation: "Sahit ! Un email de confirmation a été envoyé. Ne pas oublier de confirmer en cliquant sur le lien inclus."
