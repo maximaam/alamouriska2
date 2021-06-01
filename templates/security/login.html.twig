@@ -25,7 +25,8 @@
             <label for="input-password">{{ 'label.password'|trans }}</label>
             <input type="password" name="password" placeholder="{{ 'label.password'|trans }}" id="input-password" class="form-control" required>
             <div id="emailHelp" class="form-text">
-                <a href="{{ path('app_forgot_password_request') }}">{{ 'label.forgot_password'|trans }}</a>
+                <a href="{{ path('app_forgot_password_request') }}">{{ 'label.forgot_password'|trans }}</a> |
+                <a href="{{ path('app_register') }}">{{ 'label.no_account'|trans }}</a>
             </div>
         </div>
         <div class="text-end">
@@ -36,9 +37,5 @@
 {% endblock %}
 
 {% block card_footer %}
-    <a href="{{ path('app_register') }}" class="btn btn-secondary">
-        {{ 'label.register'|trans }}
-    </a>
-    <hr>
-    Ou alors avec ton compte facebook<br>
+    {{ include('partials/fb-login.html.twig', { 'label': 'label.login_facebook' | trans }) }}
 {% endblock %}

@@ -3,15 +3,21 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
-use App\Repository\PostRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use App\Repository\PostRepository;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=PostRepository::class)
+ * @Vich\Uploadable
  */
 class Post
 {
+    const PAGINATOR_MAX = 20;
+    const SLUG_LIMIT = 128;
+
     const TYPE_WORD = 1;
     const TYPE_EXPRESSION = 2;
     const TYPE_PROVERB = 3;
@@ -28,21 +34,25 @@ class Post
     /**
      * @Assert\Choice(callback="getTypes")
      * @ORM\Column(type="smallint")
+     * @Assert\NotBlank
      */
     private ?int $type;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      */
     private ?string $title;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
      */
     private ?string $description;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      */
     private ?string $alias;
 
@@ -130,10 +140,18 @@ class Post
         return $this;
     }
 
-    public static function getTypes(bool $keysOnly = true): array
+    /**
+     * @param bool $keysOnly
+     * @return string[]
+     */
+    public static function getTypesNames(bool $keysOnly = true): array
     {
-        $types = [
-            self::TYPE_WORD => ''
+        return [
+            self::TYPE_WORD => 'word',
+            self::TYPE_EXPRESSION => 'expression',
+            self::TYPE_PROVERB => 'proverb',
+            self::TYPE_JOKE => 'joke',
+            self::TYPE_BLOG => 'blog',
         ];
     }
 }

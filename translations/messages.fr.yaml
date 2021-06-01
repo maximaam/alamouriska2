@@ -18,8 +18,11 @@ label:
   email_private: L'adresse Email reste privée
   password_constraints: Mot de passe entre 6 et 64 caractères
   profile_edit: Modifier le profil
+  profile_image: Image de profil (Optionnel)
   profile: Profil
   logout: Déconnexion
+  login_facebook: Connexion avec Facebook
+  no_account: Pas encore de compte? Incris-toi!
 
 flash:
   registration_pre_confirmation: "Sahit ! Un email de confirmation a été envoyé. Ne pas oublier de confirmer en cliquant sur le lien inclus."

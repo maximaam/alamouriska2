@@ -1,65 +1,85 @@
+:root {
+    --purple: #632155;
+    --green: #1d624d;
+    --yellow: #dbbb4c;
+    --dark-grey: #333333;
+    --light-grey: #dddddd;
+}
+
 body {
-    color: #333333;
-    background-color: #EEEEEE;
+    color: var(--dark-grey);
+    background: var(--yellow) url("../images/alamouriska-bg-mobile.jpg") no-repeat fixed;
+    background-size: cover;
 }
 header svg {
     display: none;
 }
 .navbar {
-    background: #208fbc;
+    background: var(--purple);
 }
 .navbar-brand {
     font-weight: 700;
 }
-
 main {
     margin-top: 20px;
+    min-height: 500px;
 }
 .main-footer {
     margin-top: 50px;
-    background-color: #155d7b;
+    background: var(--green);
+    min-height: 100px;
 }
 .btn-primary {
-    background-color: #bc208f;
-    border: #bc208f;
+    background-color: var(--green);
+    border: var(--green);
 }
 .btn-secondary {
-    background-color: #8fbc20;
-    border: #8fbc20;
+    background-color: var(--green);
+    border: var(--green);
+}
+a{
+    color: var(--green);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--green);
+    text-decoration: underline;
 }
 
 .btn-secondary:hover {
-    background-color: #566D12;
+    background-color: var(--yellow);
 }
 
 .btn-primary:hover {
-    background-color: #871869;
+    background-color: var(--green);
+    opacity: .8;
 }
 
 .form-group {
     margin-bottom: 10px;
 }
-.badge {
-    color: #ff0000;
+.app-centered {
+    width: 75%;
+}
+.img-preview {
+    display: block;
+    margin-top: 10px;
+    max-width: 128px;
+    max-height: 128px;
 }
 
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
-    header svg {
-        display: block;
-        position: absolute;
-        top: -30px;
-        left: 0;
-        z-index: -1;
-        fill: #208fbc;
-        fill-opacity: 1;
+    .navbar-brand span {
+        display: none;
+    }
+    body {
+        background: var(--yellow) url("../images/alamouriska-bg.jpg") no-repeat fixed;
+        background-size: cover;
     }
     .navbar {
         background: transparent;
     }
-    main {
-        margin-top: 50px;
-    }
-    .navbar-brand span {
-        display: none;
+    .app-centered {
+        width: 50%;
     }
 }

@@ -12,12 +12,13 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 /**
  * Class RegistrationFormType
  * @package App\Form
  */
-class RegistrationFormType extends AbstractType
+final class RegistrationFormType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -51,6 +52,16 @@ class RegistrationFormType extends AbstractType
                         'minMessage' => 'password_min_length',
                         'maxMessage' => 'password_max_length',
                     ]),
+                ],
+            ])
+            ->add('avatarFile', VichImageType::class, [
+                'label' => 'label.profile_image',
+                'required' => false,
+                'allow_delete' => true,
+                'help' => '<img src="#" alt="" class="img-preview">',
+                'help_html' => true,
+                'attr' => [
+                    'accept' => 'image/jpeg, image/png',
                 ],
             ])
             ->add('submit', SubmitType::class, [
